@@ -9,30 +9,7 @@ kolarz = {
     'kraj': '-',
     'rank': -1
 }
-kolarz1 = {
-    'imie': 'Jan',
-    'nazwisko': 'Kowalski',
-    'numer_startowy': 1,
-    'klub': 'CCC',
-    'wiek': 20,
-    'kraj': 'Polska',
-    'rank': 1
-}
-kolarz2 = {
-    'imie': 'Adam',
-    'nazwisko': 'Nowak',
-    'numer_startowy': 2,
-    'klub': 'Lotto',
-    'wiek': 25,
-    'kraj': 'Polska',
-    'rank': 2
-}
-lista_kolarzy.append(kolarz1)
-lista_kolarzy.append(kolarz2)
-    
-    
-    
-    
+
 def create_kolarz():
     imie = input("Podaj imię: ")
     nazwisko = input("Podaj nazwisko: ")
