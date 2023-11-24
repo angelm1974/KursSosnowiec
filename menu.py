@@ -20,7 +20,7 @@ while True:
     elif input_user == "3":
         # print("Wyświetlam kolarzy")
         nr = int(input(f"Podaj numer startowy: "))
-        pp.lista_kolarzy[nr]=pp.read_kolarzeupdate(pp.lista_kolarzy[nr])
+        pp.lista_kolarzy[nr]=pp.read_kolarze(pp.update(pp.lista_kolarzy[nr]))
     elif input_user == "4":
         #print("Wychodzę z programu")
         os._exit(0)
