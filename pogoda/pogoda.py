@@ -1,5 +1,6 @@
 import requests as rq
 import folium as fl
+from folium.plugins import HeatMap
 import lokacje as lk
 adres="https://danepubliczne.imgw.pl/api/data/synop/"
 
@@ -15,11 +16,11 @@ for wiersz in lista:
         
     dane=lk.pobierz(wiersz["stacja"])
 
-    fl.Marker(
-        location=dane,
-        tooltip="Pokaż!",
-        popup=f"miasto: {wiersz["stacja"]}, temperatura:  {wiersz["temperatura"]} ",
-        icon=fl.Icon(color="blue"),
-    ).add_to(m)
-
+    # fl.Marker(
+    #     location=dane,
+    #     tooltip="Pokaż!",
+    #     popup=f"miasto: {wiersz["stacja"]}, temperatura:  {wiersz["temperatura"]} ",
+    #     icon=fl.Icon(color="blue"),
+    # ).add_to(m)
+HeatMap(lk.pobierz_miasta().values()).add_to(m)
 m.show_in_browser()
