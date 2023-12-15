@@ -7,19 +7,19 @@ pobrane=rq.get(adres)
 pobrane.encoding="utf-8"
 lista=pobrane.json()
 
-
+lk.pobierz_miasta()
 m = fl.Map(location=(51.75, 19.45), zoom_start=6, title="Polska")
 for wiersz in lista:
     temp=float(wiersz["temperatura"])
-    if temp<0:
+    
         
-        dane=lk.pobierz_lat_lon(wiersz["stacja"])
+    dane=lk.pobierz(wiersz["stacja"])
 
-        fl.Marker(
-            location=dane,
-            tooltip="Pokaż!",
-            popup=f"miasto: {wiersz["stacja"]}, temperatura:  {wiersz["temperatura"]} ",
-            icon=fl.Icon(color="blue"),
-        ).add_to(m)
+    fl.Marker(
+        location=dane,
+        tooltip="Pokaż!",
+        popup=f"miasto: {wiersz["stacja"]}, temperatura:  {wiersz["temperatura"]} ",
+        icon=fl.Icon(color="blue"),
+    ).add_to(m)
 
 m.show_in_browser()
